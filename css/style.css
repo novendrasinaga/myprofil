@@ -1,0 +1,661 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--bg-primary: #2f91b5;
+	--bg-primary-dark: #4c5d63;
+	--txt-dark: #414647;
+	--txt-light: #83898a;
+	--white: #fff;
+}
+
+body {
+	font-family: 'Quicksand';
+	background-color: #ddd;
+	margin: 50px;
+}
+
+.container {
+	display: grid;
+}
+
+img {
+	width: 100%;
+}
+
+header {
+	display: grid;
+}
+
+.header {
+	display: grid;
+	grid-template-areas:
+		'hero hero feature-1'
+		'hero hero feature-2';
+}
+
+.hero {
+	grid-area: hero;
+	min-height: 300px;
+	padding: 50px;
+	background-image: url('../img/1.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.hero > * {
+	display: none;
+}
+
+.features {
+	display: grid;
+	/* justify-content: center;
+	align-content: center; */
+	place-content: center;
+	cursor: pointer;
+}
+
+.feature-1 {
+	grid-area: feature-1;
+	background-image: url('../img/2.jpg');
+	background-size: cover;
+}
+
+.feature-2 {
+	grid-area: feature-2;
+	background-image: url('../img/3.jpg');
+	background-size: cover;
+}
+
+.features .activity {
+	font-size: 1.3em;
+	background-color: var(--bg-primary);
+	color: white;
+	padding: 10px;
+	font-weight: 700;
+}
+
+.features .item {
+	color: white;
+	text-align: center;
+	background-color: var(--bg-primary);
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* Navigasi */
+
+/* Menu */
+.menu {
+	order: -1;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	align-items: center;
+	background-color: white;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.brand {
+	font-family: 'Satisfy';
+	font-weight: 600;
+	padding: 10px;
+	margin-left: 20px;
+	font-size: 1.4em;
+	color: var(--bg-primary);
+	text-shadow: 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.menu ul {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	gap: 5px;
+	color: var(--bg-primary-dark);
+}
+.menu ul li a {
+	display: inline;
+	text-decoration: none;
+	color: inherit;
+}
+
+.menu ul li {
+	text-align: center;
+	padding: 10px;
+	color: var(--bg-primary-dark);
+	font-size: 1.1em;
+	font-weight: 500;
+}
+
+.menu ul li:hover,
+.active {
+	background-color: var(--bg-primary);
+	color: white !important;
+	border-radius: 10px;
+	padding: 4px;
+}
+
+.menu li active a {
+	color: blue;
+}
+
+/*  Hamburger Menu - Toogle */
+
+.menu-toggle {
+	cursor: pointer;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.menu-toggle span {
+	display: block;
+	margin-bottom: 3px;
+	width: 30px;
+	height: 3px;
+	background-color: var(--bg-primary);
+	border-radius: 3px;
+}
+
+.close-toggle-hidden {
+	display: none;
+}
+
+/* Akhir Navigasi */
+
+/* Content */
+
+.content_profil,
+.content_pendidikan {
+	margin-top: 25px;
+}
+
+/* Profil - About Page */
+
+.about_page .title {
+	font-size: 1.8em;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.about_page .title span {
+	color: var(--bg-primary);
+	letter-spacing: 2px;
+}
+
+.about_page .about_content {
+	margin-top: 1.2rem;
+	padding: 0.4rem;
+	margin-bottom: 0.5rem;
+}
+
+.about_page .about_content p {
+	font-size: 1rem;
+	text-align: justify;
+}
+
+.about_profile {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.4rem;
+}
+
+.about_profile .left_profile {
+	width: 46%;
+}
+
+.about_profile .left_profile li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0.3rem 0;
+	font-size: 1rem;
+}
+
+.about_profile .right_profile {
+	width: 46%;
+}
+
+.about_profile .right_profile li {
+	display: flex;
+	justify-content: space-between;
+	margin: 0.3rem 0;
+	align-items: center;
+	font-size: 1rem;
+}
+
+li .profile_title {
+	padding: 0.4rem;
+	background-color: var(--bg-primary);
+	color: white;
+	border-radius: 0.3rem;
+}
+
+/* Akhir Profil - About Page */
+
+/* Content - Pendidikan */
+
+.list-pendidikan {
+	display: flex;
+	flex-direction: row;
+}
+.list-pendidikan-kiri {
+	width: 50%;
+}
+.list-pendidikan-kanan {
+	width: 50%;
+}
+
+.pendidikan_title {
+	font-size: 1.8em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.pendidikan_title i {
+	color: var(--bg-primary);
+}
+
+.pendidikan_box {
+	margin: 1.5rem 0;
+}
+
+.pendidikan_box .pendidikan_date {
+	font-size: 1rem;
+	background-color: white;
+	font-weight: 600;
+	border: 0.1rem solid var(--bg-primary);
+	padding: 0.5rem 0.8rem;
+	color: var(--bg-primary);
+}
+
+.pendidikan_box .pendidikan_title {
+	margin-top: 1.2rem;
+	font-size: 1.4rem;
+	color: var(--bg-primary);
+	font-weight: 500;
+}
+
+.pendidikan_box .pendidikan_alamat {
+	font-size: 1.3rem;
+}
+
+.pendidikan_box .resume_text {
+	font-size: 1rem;
+	font-weight: 300;
+}
+
+/* Akhir Content - Pendidikan */
+
+/* Content - Skill */
+
+.skill-container {
+	display: flex;
+	justify-content: space-between;
+	margin: 1.2rem 0;
+}
+
+.skill-kiri,
+.skill-kanan {
+	width: 43%;
+}
+
+.skill-line-container {
+	margin-bottom: 20px;
+	background-color: #ccc;
+	height: 1.2rem;
+	width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.skill_title {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.skill_title i {
+	color: var(--bg-primary);
+}
+
+.skill-title {
+	font-size: 1.2em;
+	font-weight: 500;
+}
+
+.skill_line {
+	background-color: var(--bg-primary);
+	height: 1.2em;
+}
+
+.skill_line2 {
+	background-color: #9acbd0;
+	height: 1.2em;
+}
+
+/* Akhir Content - Skll */
+
+/* Services */
+.services {
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+}
+
+.service {
+	background-color: white;
+	padding: 15px;
+	text-align: center;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.service .icon {
+	font-size: 3em;
+}
+
+.service h3 {
+	font-size: 1.5em;
+}
+
+.service p {
+	font-weight: 200;
+	letter-spacing: 1px;
+	font-size: 0.9em;
+}
+
+/* Akhir Services */
+
+/* Aside */
+
+main .content .content-image img {
+	width: 250px;
+	min-width: 200px;
+	margin: auto;
+}
+
+main aside {
+	position: fixed;
+	inset-block: 0;
+	inset-inline-end: 0;
+}
+
+main aside .backtop {
+	height: 100%;
+	padding: 1.5rem 1rem;
+	display: flex;
+	align-items: end;
+	cursor: pointer;
+	justify-content: center;
+}
+
+.skill-box a {
+	color: var(--txt-dark);
+	text-decoration: none;
+}
+
+.skill-box a:hover {
+	color: var(--bg-primary);
+}
+
+/* Akhir Aside */
+
+/* Galery */
+.gallery {
+	margin-top: 50px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+	gap: 5px;
+}
+
+.gallery h2 {
+	/* grid-column-start: 1;
+	grid-column-end: -1; */
+	grid-column: 1/-1;
+	text-align: center;
+	margin-bottom: 20px;
+}
+/* Akhir Galery */
+
+/* Responsive Breakpoint */
+
+@media screen and (max-width: 1024px) {
+	.menu {
+		order: inherit;
+		grid-template-columns: 1fr;
+		padding: 10px;
+	}
+	.menu .brand {
+		display: none;
+	}
+
+	.hero > * {
+		display: block;
+		background-color: black;
+		color: white;
+		padding: 10px;
+		margin-bottom: 5px;
+	}
+
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: center;
+	}
+
+	.list-pendidikan {
+		flex-direction: column;
+	}
+
+	.list-pendidikan-kiri {
+		padding: 15px;
+		width: 100%;
+	}
+	.list-pendidikan-kanan {
+		padding: 15px;
+		margin-top: -60px;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.active,
+	li:hover {
+		background-color: var(--white);
+		color: var(--bg-primary) !important;
+		border-radius: 0px;
+		padding: 0px;
+		width: 100%;
+	}
+
+	.hero,
+	.feature-1,
+	.feature-2 {
+		min-height: 200px;
+		padding: 10px;
+	}
+	.menu-toggle {
+		display: flex;
+		position: absolute;
+		top: 3%;
+		right: 10%;
+	}
+
+	header {
+		/* display: grid; */
+		grid-template-areas:
+			'hero'
+			'feature-1'
+			'feature-2';
+	}
+
+	.menu-list {
+		display: flex !important;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 1;
+		opacity: 1;
+		width: 80%;
+		height: 100vh;
+		background-color: var(--bg-primary);
+		/* transform: translateX(100%); */
+		/* transition: all 1s; */
+	}
+
+	/* Close Toogle */
+	.close-toggle {
+		display: flex;
+		width: 94%;
+		justify-content: end;
+		align-items: center;
+		margin-top: -40px;
+	}
+
+	.close-toggle span {
+		cursor: pointer;
+		font-size: 2.3em;
+		width: 30px;
+		height: 30px;
+		font-weight: 600;
+		color: white;
+		display: flex;
+		justify-content: center;
+		padding: 19px;
+		box-sizing: border-box;
+		align-items: center;
+		border: 1px solid white;
+	}
+
+	.close-toggle span:hover {
+		color: #de9666;
+		border: 1px solid #de9666;
+	}
+
+	.menu-list-hidden {
+		display: none !important;
+	}
+
+	.menu ul {
+		flex-direction: column;
+		/* gap: 1em; */
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	.skill-container {
+		flex-direction: column;
+	}
+
+	.skill-kiri,
+	.skill-kanan {
+		width: 100%;
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	body {
+		margin: 15px;
+	}
+	.menu-toggle {
+		display: flex;
+		position: absolute;
+		top: 3%;
+		right: 10%;
+	}
+
+	header {
+		/* display: grid; */
+		grid-template-areas:
+			'hero'
+			'feature-1'
+			'feature-2';
+	}
+
+	.menu-list {
+		display: flex !important;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 1;
+		opacity: 1;
+		width: 80%;
+		height: 100vh;
+		background-color: var(--bg-primary);
+		/* transform: translateX(100%); */
+		/* transition: all 1s; */
+	}
+
+	/* Close Toogle */
+	.close-toggle {
+		display: flex;
+		width: 94%;
+		justify-content: end;
+		align-items: center;
+		margin-top: -40px;
+	}
+
+	.close-toggle span {
+		cursor: pointer;
+		font-size: 2.3em;
+		width: 30px;
+		height: 30px;
+		font-weight: 600;
+		color: white;
+		display: flex;
+		justify-content: center;
+		padding: 19px;
+		box-sizing: border-box;
+		align-items: center;
+		border: 1px solid white;
+	}
+
+	.close-toggle span:hover {
+		color: #de9666;
+		border: 1px solid #de9666;
+	}
+
+	.menu-list-hidden {
+		display: none !important;
+	}
+
+	.menu ul {
+		flex-direction: column;
+		/* gap: 1em; */
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	.about_profile {
+		flex-direction: column;
+	}
+
+	.about_profile .left_profile {
+		width: 100%;
+	}
+
+	.about_profile .right_profile {
+		width: 100%;
+	}
+}
+
+/* Footer */
+footer {
+	background-color: white;
+	margin-top: 20px;
+	padding: 20px;
+}
+
+footer p {
+	text-align: center;
+	font-weight: 500;
+}
